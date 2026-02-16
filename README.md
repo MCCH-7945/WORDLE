@@ -83,6 +83,23 @@ python wordle_solver.py sim barra
 
 ---
 
+## Benchmark (media de intentos)
+
+Para medir el rendimiento del solver: simula muchas partidas con **palabra secreta aleatoria** (elegida de `palabras_es.txt`) y muestra la **media de intentos** necesarios para acertar, desviación típica, distribución, etc.
+
+```bash
+python benchmark_solver.py -n 100 --seed 123
+```
+
+- **`-n`** / **`--partidas`**: número de partidas a simular (default: 100).
+- **`--max`**: máximo de intentos por partida (default: 6).
+- **`--seed`**: semilla para reproducir los mismos sorteos.
+- **`-q`** / **`--quiet`**: solo imprime la media (útil para scripts).
+
+Ejemplo de salida: media de intentos, mín/máx, % resueltas y un histograma de intentos (1–6).
+
+---
+
 ## Resumen rápido
 
 | Qué quieres hacer        | Comando / acción |
@@ -90,3 +107,4 @@ python wordle_solver.py sim barra
 | Jugar tú, con sugerencias en terminal | `python wordle_solver.py` |
 | Ver al programa resolver solo        | `python wordle_solver.py sim &lt;palabra&gt;` |
 | Usar la interfaz en el navegador     | `pip install -r requirements.txt` → `python app.py` → abrir http://127.0.0.1:5000 |
+| Medir rendimiento (media de intentos) | `python benchmark_solver.py -n 100` |
